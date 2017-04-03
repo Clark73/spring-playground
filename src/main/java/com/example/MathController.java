@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * Created by trainer14 on 4/2/17.
+ * Created by Kevin Clark on 4/2/17.
  */
 @RestController()
 @RequestMapping("/math")
