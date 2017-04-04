@@ -63,4 +63,13 @@ public class MathService {
     }
 
 
+    public static String createVolumeString(ArrayList<Integer> paramList) {
+        int vol = 1;
+        String token = "";
+        for(int number : paramList ) { vol *= number; token += String.format("%dx", number); }
+        String ret = String.format("The volume of a %s rectangle is %d", token.substring(0, token.length() - 1), vol);
+        return  ret;
+
+
+    }
 }

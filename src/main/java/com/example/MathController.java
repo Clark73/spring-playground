@@ -49,4 +49,14 @@ public class MathController {
         for(String s : queryParams) queryNums.add(Integer.valueOf(s));
         return MathService.createSum(queryNums);
     }
+
+    @RequestMapping("/volume/{x}/{y}/{z}")
+    public String volume(@PathVariable Map pathVariables) {
+        List<String> pathParams;
+        ArrayList<Integer> pathNums = new ArrayList<>();
+
+        for ( Object key: pathVariables.keySet())  pathNums.add(Integer.valueOf(pathVariables.get(key).toString()));
+        return MathService.createVolumeString(pathNums);
+
+    }
 }

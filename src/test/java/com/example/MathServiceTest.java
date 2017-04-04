@@ -15,8 +15,6 @@ import java.util.ArrayList;
 @RunWith(JUnit4.class)
 public class MathServiceTest {
 
-    //private MathService mathService = new MathService();
-
     @Test
     public void testCreateAddString() {
 
@@ -65,4 +63,16 @@ public class MathServiceTest {
         assert(sumString.equals("1 + 2 + 3 = 6"));
     }
 
+    @Test
+    public void testCreateVolumeString() {
+        ArrayList<Integer> paramList = new ArrayList<>();
+        paramList.add(2);
+        paramList.add(3);
+        paramList.add(5);
+
+        String volumeString = MathService.createVolumeString(paramList);
+
+        assert(volumeString.equals("The volume of a 2x3x5 rectangle is 30"));
+
+    }
 }
