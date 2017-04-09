@@ -75,4 +75,18 @@ public class MathServiceTest {
         assert(volumeString.equals("The volume of a 2x3x5 rectangle is 30"));
 
     }
+
+    @Test
+    public void testCreateCircleAreaString() {
+        String areaString = MathService.createCircleAreaString(4);
+
+        assert(areaString.equals("Area of a circle with a radius of 4 is 50.26548"));
+    }
+
+    @Test
+    public void testCreateRectangleAreaString() {
+        String areaString = MathService.createRectangleAreaString(7, 4);
+
+        assert(areaString.equals("Area of a 4x7 rectangle is 28"));
+    }
 }

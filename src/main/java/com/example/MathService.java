@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.ArrayList;
+import java.lang.Math;
 
 /**
  * Created by Kevin Clark on 4/2/17.
@@ -67,9 +68,15 @@ public class MathService {
         int vol = 1;
         String token = "";
         for(int number : paramList ) { vol *= number; token += String.format("%dx", number); }
-        String ret = String.format("The volume of a %s rectangle is %d", token.substring(0, token.length() - 1), vol);
-        return  ret;
+        return String.format("The volume of a %s rectangle is %d", token.substring(0, token.length() - 1), vol);
 
+    }
 
+    public static String createCircleAreaString(int radius) {
+        return String.format("Area of a circle with a radius of %d is %.5f", radius, Math.PI * Math.pow(radius, 2));
+    }
+
+    public static String createRectangleAreaString(int width, int height) {
+        return String.format("Area of a %dx%d rectangle is %d", height, width, width * height);
     }
 }
