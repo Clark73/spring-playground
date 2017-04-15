@@ -2,3 +2,7 @@
 .idea/
 .gradel/
 build/
+
+\.gradle/3\.4\.1/fileContent/
+
+\.gradle/3\.4\.1/taskHistory/
