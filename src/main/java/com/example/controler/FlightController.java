@@ -1,12 +1,8 @@
 package com.example.controler;
 
-import com.example.model.Flight;
-import com.example.model.Passenger;
-import com.example.model.Ticket;
+import com.example.model.*;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -26,12 +22,15 @@ public class FlightController {
         Flight flight2 = new Flight();
         Ticket ticket1 = new Ticket();
         Ticket ticket2 = new Ticket();
-        Passenger passenger1 = new Passenger("Kevin", "Clark");
-        Passenger passenger2 = new Passenger("Nicole");
+        Passenger passenger1 = new Passenger();
+        Passenger passenger2 = new Passenger();
 
+        passenger1.setFirstname("Kevin");
+        passenger1.setLastname("Clark");
         ticket1.setPrice(200);
         ticket1.setPassenger(passenger1);
 
+        passenger2.setFirstname("Nicole");
         ticket2.setPrice(400);
         ticket2.setPassenger(passenger2);
 
@@ -49,8 +48,10 @@ public class FlightController {
         long datetime = 1492785240000L;
         Flight flight = new Flight();
         Ticket ticket1 = new Ticket();
-        Passenger passenger1 = new Passenger("Kevin", "Clark");
+        Passenger passenger1 = new Passenger();
 
+        passenger1.setFirstname("Kevin");
+        passenger1.setLastname("Clark");
         ticket1.setPrice(200);
         ticket1.setPassenger(passenger1);
 
@@ -61,5 +62,19 @@ public class FlightController {
         flight.setDepartsOn(new Date(datetime));
 
         return flight;
+    }
+
+    @PostMapping("/tickets/total")
+    public Total calcTotal(@RequestBody TicketBundle flight) {
+        Total total = new Total();
+
+        int totalPrice = 0;
+        for(Ticket ticket: flight.getTickets()) {
+            totalPrice += ticket.getPrice();
+        }
+
+        total.setTotal(totalPrice);
+
+        return total;
     }
 }

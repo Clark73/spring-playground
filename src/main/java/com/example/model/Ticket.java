@@ -12,17 +12,19 @@ import java.util.List;
  */
 public class Ticket {
 
-    @JsonProperty("Passenger")
     private Passenger passenger;
 
-    @JsonProperty("Price")
     private int price;
 
+    @JsonGetter("Passenger")
     public Passenger getPassenger() { return passenger; }
 
+    @JsonGetter("Price")
     public int getPrice() { return price; }
 
+    @JsonSetter("price")
     public void setPrice(int price) { this.price = price; }
+
     public void setPassenger(Passenger passenger) { this.passenger = passenger; }
 
 }

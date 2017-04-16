@@ -10,28 +10,16 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Passenger {
-    private String firstName;
-    private String lastName;
+    private String firstname;
+    private String lastname;
 
-    @JsonCreator
-    public Passenger(
-            @JsonProperty("Firstname") String firstname,
-            @JsonProperty("Lastname") String lastname
-    ) {
-        this.firstName = firstname;
-        this.lastName = lastname;
-    }
+    public void setFirstname(String firstname) { this.firstname = firstname; }
 
-    @JsonCreator
-    public Passenger(
-            @JsonProperty("Firstname") String firstname
-    ) {
-        this.firstName = firstname;
-    }
+    public void setLastname(String lastname) { this.lastname = lastname; }
 
     @JsonGetter("Firstname")
-    public String getFirstName() { return firstName; }
+    public String getFirstname() { return firstname; }
     @JsonGetter("Lastname")
-    public String getLastName() { return lastName; }
+    public String getLastname() { return lastname; }
 
 }
