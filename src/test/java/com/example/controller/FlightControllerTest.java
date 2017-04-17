@@ -1,7 +1,5 @@
 package com.example.controller;
 
-import com.example.controler.FlightController;
-import com.example.controler.MathController;
 import com.example.model.Flight;
 import com.example.model.Ticket;
 import com.google.gson.Gson;
@@ -14,7 +12,6 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.RequestBuilder;
-import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 
@@ -24,7 +21,6 @@ import java.nio.file.Paths;
 import java.util.Arrays;
 
 import static org.hamcrest.Matchers.is;
-import static org.hamcrest.Matchers.isEmptyOrNullString;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 

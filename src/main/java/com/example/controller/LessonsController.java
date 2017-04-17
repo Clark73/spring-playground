@@ -1,4 +1,4 @@
-package com.example.controler;
+package com.example.controller;
 
 import com.example.entity.Lesson;
 import com.example.entity.LessonRepository;

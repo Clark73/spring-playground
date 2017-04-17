@@ -1,7 +1,6 @@
-package com.example.controler;
+package com.example.controller;
 
 import com.example.model.*;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
