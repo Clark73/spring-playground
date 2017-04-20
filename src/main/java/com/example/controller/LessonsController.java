@@ -43,6 +43,16 @@ public class LessonsController {
         return;
     }
 
+    @GetMapping("/movies/{title}")
+    public Lesson getMoviesByTitle(@PathVariable String title) {
+        return this.repository.findByTitle(title);
+    }
+
+    @GetMapping("/movies/count")
+    public long getCountofLessons() {
+        return this.repository.count();
+    }
+
 
 
 }
