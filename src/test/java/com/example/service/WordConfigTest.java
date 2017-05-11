@@ -28,7 +28,7 @@ public class WordConfigTest {
         assert ( wordConfig.getWords().getSkip().contains( "orange" ));
         assert ( wordConfig.getWords().getSkip().contains( "Arya" ));
         assert ( !wordConfig.isCaseSensitive());
-        
+
     }
 }
 
