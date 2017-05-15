@@ -37,4 +37,9 @@ public class OMDBService {
 
         return response.getBody().getSearch();
     }
+
+    public RestTemplate getRestTemplate() {
+        return restTemplate;
+    }
+
 }
